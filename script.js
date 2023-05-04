@@ -54,7 +54,7 @@ function setClock(selector, endtime){
     days = document.querySelector('#days'),
     hours = document.querySelector('#hours'),
     minutes = document.querySelector('#minutes'),
-    seconds = document.querySelector('#seconds');
+    seconds = document.querySelector('#seconds'),
     timeInterval = setInterval(updateClock, 1000);
 
     updateClock();
@@ -72,4 +72,25 @@ function updateClock(){
 
 }
 setClock('.timer', timeEnd);
+
+//modal window
+const modalTriger = document.querySelectorAll('[data-modal]'),
+      modal = document.querySelector('.modal'),
+      modalClose = document.querySelector('[data-close]');
+      
+      
+      modalTriger.forEach(btn =>{
+        btn.addEventListener('click', ()=>{
+            modal.classList.add('show');
+            modal.classList.remove('hide');
+
+        });
+        
+      });
+      modalClose.addEventListener('click', ()=>{
+        modal.classList.add('hide');
+        modal.classList.remove('show');
+      });
+        
     });
+
